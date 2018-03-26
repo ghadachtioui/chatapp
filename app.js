@@ -13,7 +13,7 @@ restService.use(
 restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
-    req.body.result &&
+   /* req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.echoText
       ? req.body.result.parameters.echoText
@@ -21,28 +21,17 @@ restService.post("/echo", function(req, res) {
     return res.json({
     speech: speech,
     displayText: speech,
-    source: "webhook-echo-sample"
-  });
-});
-
-restService.post("/audio", function(req, res) {
-  var speech = "";
-  switch (req.body.result.resolvedQuery) {
-    //Speech Synthesis Markup Language 
-    case "bjour":
-      speech =
-        'nnn';
-      break;
-    case "bye":
-      speech =
-        'see u soon';
-      break;
-        }
-  return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample"
-  });
+    source: "webhook-echo-sample" 
+  }); */ 
+if(req.body.result.parameters.echoText=="Bonjour"){
+    return res.json({
+      speech: "Sbe7 elfol"
+    });
+  }else{
+    return res.json({
+      speech: "barrra nanni"
+    });
+  }
 });
 
 //
