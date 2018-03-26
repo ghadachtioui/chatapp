@@ -26,6 +26,14 @@ restService.post("/echo", function(req, res) {
   });
 });
 
+restService.post("/audio", function(req, res) {
+  var speech = "";
+  switch (req.body.result.resolvedQuery) {
+    //Speech Synthesis Markup Language 
+    case "Bjour":
+      speech =
+        'salut ghada';
+      break;
 //
 // Preamble
 var http = require ('http');	     // For serving a basic web page.
