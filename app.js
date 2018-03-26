@@ -34,6 +34,16 @@ restService.post("/audio", function(req, res) {
       speech =
         'salut ghada';
       break;
+  }
+      
+       return res.json({
+    speech: "speech",
+    displayText: "speech",
+    source: "webhook-echo-sample",
+    data: {
+      slack: slack_message
+    }
+  });
 //
 // Preamble
 var http = require ('http');	     // For serving a basic web page.
