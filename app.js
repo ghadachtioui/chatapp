@@ -23,7 +23,7 @@ restService.post("/echo", function(req, res) {
     displayText: speech,
     source: "webhook-echo-sample" 
   }); */ 
-if(req.body.result.parameters.echoText=="Bonjour"){
+if(req.body.result.parameters.resolvedQuery=="Bonjour"){
     return res.json({
       speech: "Sbe7 elfol"
     });
