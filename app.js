@@ -86,5 +86,9 @@ alicesmith.save(function (err) {if (err) console.log ('Error on save!')});
 // user will see this message.
 var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
 
+restService.listen(process.env.PORT || 8000, function() {
+  console.log("Server up and listening");
+});
+
 
 
