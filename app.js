@@ -18,11 +18,7 @@ restService.post("/echo", function(req, res) {
     req.body.result.resolvedQuery &&
       ? req.body.result.resolvedQuery
       : "Seems like some problem. Speak again.";
-  return res.json({
-    speech: speech,
-    displayText: speech,
-    source: "webhook-echo-sample"
-  });
+
 });
 
 //restService.post("/audio", function(req, res) {
