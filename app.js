@@ -25,25 +25,26 @@ restService.post("/echo", function(req, res) {
   });
 });
 
-restService.post("/audio", function(req, res) {
-  var speech = "";
-  switch (req.body.result.resolvedQuery) {
+//restService.post("/audio", function(req, res) {
+//  var speech = "";
+ // switch (req.body.result.resolvedQuery) {
     //Speech Synthesis Markup Language 
-    case "Bjour":
-      speech =
-        'salut ghada';
-      break;
-  }
+ //   case "Bjour":
+   //   speech =
+     //   'salut ghada';
+     // break;
+ // }
       
-       return res.json({
-    speech: "speech",
-    displayText: "speech",
-    source: "webhook-echo-sample",
-    data: {
-      speech
-    }
-  });
-};
+//       return res.json({
+  //  speech: "speech",
+    //displayText: "speech",
+    //source: "webhook-echo-sample",
+   // data: {
+     // speech
+   // }
+ // });
+//};
+
 //
 // Preamble
 var http = require ('http');	     // For serving a basic web page.
