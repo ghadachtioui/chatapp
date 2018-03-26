@@ -39,7 +39,7 @@ restService.post("/audio", function(req, res) {
       break;
         }
   return res.json({
-    //req.body.result.fulfillment.speech: speech,
+    fullfilment: {speech:"bababa"},
     displayText: speech,
     source: "webhook-echo-sample"
   });
