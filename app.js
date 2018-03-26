@@ -43,6 +43,7 @@ restService.post("/audio", function(req, res) {
       speech
     }
   });
+};
 //
 // Preamble
 var http = require ('http');	     // For serving a basic web page.
