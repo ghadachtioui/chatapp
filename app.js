@@ -43,14 +43,14 @@ var speech =
 
   if (req.body.result.parameters.number == n ) { 
       return res.json({
-        speech: "no non !",
+        speech: "Désolé, mais votre solde de congé est insuffisant !",
         displayText: speech,
         source: "webhook-echo-sample"
       });
   } else if (req.body.result.parameters.number <= n )
 {
     return res.json({
-    speech: "okey okey !",
+    speech: "D'accord ça marche !",
     displayText: speech,
     source: "webhook-echo-sample"
     });
@@ -58,7 +58,7 @@ var speech =
   else
   {
 return res.json({
-  speech: "byye !",
+  speech: "Ok, Dites moi vous voulez combien de jours exactement !",
   displayText: speech,
   source: "webhook-echo-sample"
   });
