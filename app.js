@@ -38,32 +38,36 @@ var speech =
     req.body.result.parameters.demandeConge
       ? req.body.result.parameters.demandeConge
       : "Seems like some problem. Speak again.";
- if (req.body.result.action == 'demandeConge'){
+      
+ if (req.body.result.action == 'demandeConge')
+ {
+   speech= "Ok, Dites moi vous voulez combien de jours exactement";
    if (req.body.result.parameters.number == n ) 
+  
    { 
-      return res.json({
-        speech: "Désolé, mais votre solde de congé est insuffisant !",
-        displayText: speech,
-        source: "webhook-echo-sample"
-      });
-  } 
-  else if (req.body.result.parameters.number <= n )
+     speech= "Désolé, mais votre solde de congé est insuffisant !";
+}
+
+  else 
+  {
+    if (req.body.result.parameters.number <= n )
 {
-    return res.json({
-    speech: "D'accord ça marche !",
-    displayText: speech,
-    source: "webhook-echo-sample"
-    });
+    speech= "D'accord ça marche !";
+
+}
 }
 }
   else
   {
-return res.json({
-  speech: "Ok, Dites moi vous voulez combien de jours exactement !",
-  displayText: speech,
-  source: "webhook-echo-sample"
-  });
+
+  speech = "Ok, Dites moi vous voulez combien de jours exactement !";
+
 }
+      return res.json({
+        speech: speech,
+        displayText: speech,
+        source: "webhook-echo-sample"
+      });
 })
 
        db.close();
