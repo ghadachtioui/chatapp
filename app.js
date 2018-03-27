@@ -25,7 +25,7 @@ restService.use(
 
 
 
-mongoose.connect(uristring) {
+mongoose.connect(uristring)
   //if (err) throw err;
 
 restService.use(bodyParser.json());
