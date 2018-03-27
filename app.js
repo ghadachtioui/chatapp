@@ -62,7 +62,7 @@ return res.json({
   displayText: speech,
   source: "webhook-echo-sample"
   });
-
+})
 
 /*
 // Makes connection asynchronously.  Mongoose will queue up database
@@ -110,10 +110,4 @@ var found = ['DB Connection not yet established.  Try again later.  Check the co
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
 });
-
-
-})
-
-
-
 
