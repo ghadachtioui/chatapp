@@ -33,8 +33,7 @@ var userSchema = new mongoose.Schema({
   },
   nbrejours: { type: Number, min: 0}
 });
-var db = 
-mongoose.model('powerusers', userSchema);
+var db = mongoose.model('powerusers', userSchema);
   //if (err) throw err;
 
 restService.use(bodyParser.json());
