@@ -26,32 +26,36 @@ restService.use(bodyParser.json());
 
 restService.post("/echo", function(req, res) {
 var speech =
+mongoose.connect(uristring, function(err, db) {
+  if (err) throw err;
+  db.collection("powerusers").find({}, { _id: 0, age: 25 }).toArray(function(err, result) {
+    if (err) throw err;
+      var n = result[0].nbrejours;
+    db.close();
+  });
+}); 
+
+var speech =
     req.body.result &&
     req.body.result.parameters &&
     req.body.result.parameters.demandeConge
       ? req.body.result.parameters.demandeConge
       : "Seems like some problem. Speak again.";
-  if (req.body.result.parameters.number == '5' ) { 
-    return res.json({
-    speech: "no non !",
-    displayText: speech,
-    source: "webhook-echo-sample"
-    });
-  } else if (req.body.result.parameters.number <= '5' ){
+
+  if (req.body.result.parameters.number == n ) { 
+      return res.json({
+        speech: "no non !",
+        displayText: speech,
+        source: "webhook-echo-sample"
+      })
+  } else 
+{
     return res.json({
     speech: "okey okey !",
     displayText: speech,
     source: "webhook-echo-sample"
     });
-  }
-  else {
-  return res.json({
-    speech: "Dites moi vous voulez combien de jours exactement !",
-    displayText: speech,
-    source: "webhook-echo-sample"
-    });
-  }
-});
+}
 
 
 /*
@@ -93,15 +97,6 @@ var johndoe = new PUser ({
 // Saving it to the database.  
 johndoe.save(function (err) {if (err) console.log ('Error on save!')});
 */ 
-mongoose.connect(uristring, function(err, db) {
-  if (err) throw err;
-  db.collection("powerusers").find({}, { _id: 0, age: 25 }).toArray(function(err, result) {
-    if (err) throw err;
-      console.log (result[0].nbrejours);
-    db.close();
-  });
-}); 
-
 
 
 var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
