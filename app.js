@@ -40,7 +40,7 @@ var speech =
     req.body.result.parameters.demandeConge
       ? req.body.result.parameters.demandeConge
       : "Seems like some problem. Speak again.";
- if (req.body.result.action == "demandeConge"){
+ if (req.body.result.action == 'demandeConge'){
    if (req.body.result.parameters.number == n ) { 
       return res.json({
         speech: "Désolé, mais votre solde de congé est insuffisant !",
