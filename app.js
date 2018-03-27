@@ -37,18 +37,20 @@ var speech =
     displayText: speech,
     source: "webhook-echo-sample"
     });
-  } else {
+  } else if (req.body.result.parameters.number <= '5' ){
     return res.json({
     speech: "okey okey !",
     displayText: speech,
     source: "webhook-echo-sample"
     });
   }
+  else {
   return res.json({
     speech: "Dites moi vous voulez combien de jours exactement !",
     displayText: speech,
     source: "webhook-echo-sample"
     });
+  }
 });
 
 
