@@ -31,6 +31,11 @@ var speech =
     req.body.result.parameters.demandeConge
       ? req.body.result.parameters.demandeConge
       : "Seems like some problem. Speak again.";
+  if (req.body.result.parameters.number == 5) { 
+    speech: "non non !";
+  } else {
+    speech: "okey !";
+  }
   return res.json({
     speech: "Dites moi vous voulez combien de jours exactement !",
     displayText: speech,
