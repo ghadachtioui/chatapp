@@ -54,7 +54,7 @@ var speech =
 });
 
 
-
+/*
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
 MongoClient.connect(uristring, function (err, res) {
@@ -64,7 +64,7 @@ MongoClient.connect(uristring, function (err, res) {
     console.log ('Succeeded connected to: ' + uristring);
   }
 });
-/*
+
 // This is the schema.  Note the types, validation and trim
 // statements.  They enforce useful constraints on the data.
 var userSchema = new mongoose.Schema({
