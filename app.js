@@ -28,7 +28,7 @@ restService.post("/echo", function(req, res) {
 var speech =
 mongoose.connect(uristring, function(err, db) {
   if (err) throw err;
-  db.collection("powerusers").find({}, { _id: 0, age: 25 }).toArray(function(err, result) {
+  db.collection("powerusers").find{}.toArray(function(err, result) {
     if (err) throw err;
       var n = result[0].nbrejours;
     db.close();
