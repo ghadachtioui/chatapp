@@ -22,7 +22,7 @@ restService.use(
     extended: true
   })
 );
-restService.use(bodyParser.json());
+
 
 
 mongoose.connect(uristring, function(err, db) {
@@ -33,6 +33,8 @@ mongoose.connect(uristring, function(err, db) {
     db.close();
   });
 }); 
+
+restService.use(bodyParser.json());
 restService.post("/echo", function(req, res) {
 var speech =
     req.body.result &&
