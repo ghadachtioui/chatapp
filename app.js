@@ -99,7 +99,7 @@ mongoose.connect(url, function(err, db) {
 
     cursor.each(function(err, doc) {
 
-        console.log(doc);
+        echo ("c bon" );
 
     });
 }); 
