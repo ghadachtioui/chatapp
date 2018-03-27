@@ -49,7 +49,7 @@ var speech =
         displayText: speech,
         source: "webhook-echo-sample"
       });
-  } else 
+  } else if (req.body.result.parameters.number <= n )
 {
     return res.json({
     speech: "okey okey !",
@@ -57,11 +57,14 @@ var speech =
     source: "webhook-echo-sample"
     });
 }
+  else
+  {
 return res.json({
   speech: "byye !",
   displayText: speech,
   source: "webhook-echo-sample"
   });
+  }
 })
 
 /*
