@@ -25,12 +25,21 @@ restService.use(
 
 
 
-mongoose.connect(uristring)
+mongoose.connect(uristring);
+var userSchema = new mongoose.Schema({
+  name: {
+    first: String,
+    last: { type: String, trim: true }
+  },
+  nbrejours: { type: Number, min: 0}
+});
+var db = 
+mongoose.model('powerusers', userSchema);
   //if (err) throw err;
 
 restService.use(bodyParser.json());
 restService.post("/echo", function(req, res) {
-   db.collection("powerusers").find({}, { _id: 0, age: 1 }).toArray(function(err, result) {
+   db.find({}, function(err, result) {
     if (err) throw err;
     var n = result[0].nbrejours;
 var speech =
