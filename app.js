@@ -56,7 +56,7 @@ var speech =
     displayText: speech,
     source: "webhook-echo-sample"
     });
-}
+};
 return res.json({
   speech: "byye !",
   displayText: speech,
