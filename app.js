@@ -16,11 +16,11 @@ restService.post("/echo", function(req, res) {
 var speech =
     req.body.result &&
     req.body.result.parameters &&
-    req.body.result.parameters.echoText
-      ? req.body.result.parameters.echoText
+    req.body.result.parameters.demandeConge
+      ? req.body.result.parameters.demandeConge
       : "Seems like some problem. Speak again.";
   return res.json({
-    speech: "tfadlik yékhi",
+    speech: "Dites moi vous voulez combien de jours exactement !",
     displayText: speech,
     source: "webhook-echo-sample"
     });
