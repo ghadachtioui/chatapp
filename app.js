@@ -30,8 +30,6 @@ mongoose.connect(uristring, function(err, db) {
  db.collection("powerusers").find({}, { _id: 0, age: 1 }).toArray(function(err, result) {
     if (err) throw err;
       var n = result[0].nbrejours;
-    db.close();
-  });
 
 
 restService.use(bodyParser.json());
@@ -66,6 +64,9 @@ return res.json({
   });
   }
 })
+       db.close();
+  });
+
 }); 
 /*
 // Makes connection asynchronously.  Mongoose will queue up database
