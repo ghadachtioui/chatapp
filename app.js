@@ -24,8 +24,7 @@ restService.use(
 );
 restService.use(bodyParser.json());
 
-restService.post("/echo", function(req, res) {
-var speech =
+
 mongoose.connect(uristring, function(err, db) {
   if (err) throw err;
   db.collection("powerusers").find{}.toArray(function(err, result) {
@@ -34,7 +33,7 @@ mongoose.connect(uristring, function(err, db) {
     db.close();
   });
 }); 
-
+restService.post("/echo", function(req, res) {
 var speech =
     req.body.result &&
     req.body.result.parameters &&
