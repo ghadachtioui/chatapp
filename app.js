@@ -93,7 +93,7 @@ var johndoe = new PUser ({
 // Saving it to the database.  
 johndoe.save(function (err) {if (err) console.log ('Error on save!')});
 */ 
-MongoClient.connect(uristring , function(err, db) {
+mongoose.connect(uristring , function(err, db) {
 
     var cursor = db.collection('powerusers').find();
 
