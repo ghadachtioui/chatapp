@@ -64,7 +64,7 @@ mongoose.connect(uristring, function (err, res) {
     console.log ('Succeeded connected to: ' + uristring);
   }
 });
-
+/*
 // This is the schema.  Note the types, validation and trim
 // statements.  They enforce useful constraints on the data.
 var userSchema = new mongoose.Schema({
@@ -92,7 +92,7 @@ var johndoe = new PUser ({
 
 // Saving it to the database.  
 johndoe.save(function (err) {if (err) console.log ('Error on save!')});
-
+*/  
 var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
 
 restService.listen(process.env.PORT || 8000, function() {
