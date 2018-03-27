@@ -32,7 +32,7 @@ mongoose.connect(uristring, function(err, db) {
       var n = result[0].nbrejours;
     db.close();
   });
-}); 
+
 
 restService.use(bodyParser.json());
 restService.post("/echo", function(req, res) {
@@ -66,7 +66,7 @@ return res.json({
   });
   }
 })
-
+}); 
 /*
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
