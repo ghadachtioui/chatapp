@@ -93,15 +93,15 @@ var johndoe = new PUser ({
 // Saving it to the database.  
 johndoe.save(function (err) {if (err) console.log ('Error on save!')});
 */ 
-mongoose.connect(uristring , function(err, db) {
-
-    var cursor = db.collection('powerusers').find();
-
-    cursor.each(function(err, doc) {
-
-        console.log(doc);
-    });
+mongoose.connect(uristring, function(err, db) {
+  if (err) throw err;
+  db.collection("powerusers").find({}, { _id: 0, age: 25 }).toArray(function(err, result) {
+    if (err) throw err;
+      console.log (result[0].nbrejours);
+    db.close();
+  });
 }); 
+
 
 
 var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
