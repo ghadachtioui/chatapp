@@ -29,9 +29,7 @@ mongoose.connect(uristring, function(err, db) {
   if (err) throw err;
  db.collection("powerusers").find({}, { _id: 0, age: 1 }).toArray(function(err, result) {
     if (err) throw err;
-      var n = result[0].nbrejours;
-
-
+    var n = result[0].nbrejours;
 restService.use(bodyParser.json());
 restService.post("/echo", function(req, res) {
 var speech =
@@ -41,19 +39,22 @@ var speech =
       ? req.body.result.parameters.demandeConge
       : "Seems like some problem. Speak again.";
  if (req.body.result.action == 'demandeConge'){
-   if (req.body.result.parameters.number == n ) { 
+   if (req.body.result.parameters.number == n ) 
+   { 
       return res.json({
         speech: "Désolé, mais votre solde de congé est insuffisant !",
         displayText: speech,
         source: "webhook-echo-sample"
       });
-  } else if (req.body.result.parameters.number <= n )
+  } 
+  else if (req.body.result.parameters.number <= n )
 {
     return res.json({
     speech: "D'accord ça marche !",
     displayText: speech,
     source: "webhook-echo-sample"
     });
+}
 }
   else
   {
@@ -62,11 +63,13 @@ return res.json({
   displayText: speech,
   source: "webhook-echo-sample"
   });
-  }
 }
+})
+
        db.close();
 
 }); 
+});
 /*
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
