@@ -65,13 +65,14 @@ var speech =
 
 }
 }
+    }
   else
   {
 
   speech = "Je vous souhaite une bonne journée!";
 
 }
- }
+
       return res.json({
         speech: speech,
         displayText: speech,
