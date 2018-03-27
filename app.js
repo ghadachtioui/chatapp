@@ -27,7 +27,7 @@ restService.use(
 
 mongoose.connect(uristring, function(err, db) {
   if (err) throw err;
-  db.collection("powerusers").find{}.toArray(function(err, result) {
+  db.collection("powerusers").find({}).toArray(function(err, result) {
     if (err) throw err;
       var n = result[0].nbrejours;
     db.close();
@@ -56,6 +56,12 @@ var speech =
     displayText: speech,
     source: "webhook-echo-sample"
     });
+}
+return res.json({
+  speech: "byye !",
+  displayText: speech,
+  source: "webhook-echo-sample"
+  });
 }
 
 
@@ -100,8 +106,8 @@ johndoe.save(function (err) {if (err) console.log ('Error on save!')});
 */ 
 
 
-var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
-
+//var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
+)
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
 });
