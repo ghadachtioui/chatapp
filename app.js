@@ -93,6 +93,16 @@ var johndoe = new PUser ({
 // Saving it to the database.  
 johndoe.save(function (err) {if (err) console.log ('Error on save!')});
 */  
+mongoose.connect(url, function(err, db) {
+
+    var cursor = db.collection('powerusers').find();
+
+    cursor.each(function(err, doc) {
+
+        console.log(doc);
+
+    });
+}); 
 var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
 
 restService.listen(process.env.PORT || 8000, function() {
