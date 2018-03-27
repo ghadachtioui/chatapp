@@ -72,7 +72,6 @@ var speech =
 })
 
 }); 
-});
 /*
 // Makes connection asynchronously.  Mongoose will queue up database
 // operations and release them when the connection is complete.
