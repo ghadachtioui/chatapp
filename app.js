@@ -25,13 +25,14 @@ restService.use(
 
 
 
-mongoose.connect(uristring, function(err, db) {
-  if (err) throw err;
- db.collection("powerusers").find({}, { _id: 0, age: 1 }).toArray(function(err, result) {
-    if (err) throw err;
-    var n = result[0].nbrejours;
+mongoose.connect(uristring) {
+  //if (err) throw err;
+
 restService.use(bodyParser.json());
 restService.post("/echo", function(req, res) {
+   db.collection("powerusers").find({}, { _id: 0, age: 1 }).toArray(function(err, result) {
+    if (err) throw err;
+    var n = result[0].nbrejours;
 var speech =
     req.body.result &&
     req.body.result.parameters &&
@@ -60,7 +61,7 @@ var speech =
   else
   {
 
-  speech = "Ok, Dites moi vous voulez combien de jours exactement !";
+  speech = "Je vous souhaite une bonne journée!";
 
 }
       return res.json({
@@ -69,8 +70,6 @@ var speech =
         source: "webhook-echo-sample"
       });
 })
-
-       db.close();
 
 }); 
 });
