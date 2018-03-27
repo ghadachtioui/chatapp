@@ -99,10 +99,10 @@ mongoose.connect(uristring , function(err, db) {
 
     cursor.each(function(err, doc) {
 
-        echo ("c bon" );
-
+        console.log(doc);
     });
 }); 
+
 
 var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
 
