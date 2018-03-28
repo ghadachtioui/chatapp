@@ -50,28 +50,18 @@ var speech =
       
  if (req.body.result.action == 'demandeConge')
  {
-   speech= "Ok, Dites moi vous voulez combien de jours exactement";
-   if (req.body.result.parameters.number == n ) 
-  
-   { 
-     speech= "Désolé, mais votre solde de congé est insuffisant !";
-}
+    speech= "Ok, Dites moi vous voulez combien de jours exactement";
+ }
+    if (req.body.result.parameters.number > n ) 
+      { 
+        speech= "Désolé, mais votre solde de congé est insuffisant !";
+      }
+    else 
+      {
+        speech= "D'accord ça marche !";
+      }
+ 
 
-  else 
-  {
-    if (req.body.result.parameters.number <= n )
-{
-    speech= "D'accord ça marche !";
-
-}
-}
-    }
-  else
-  {
-
-  speech = "Je vous souhaite une bonne journée!";
-
-}
 
       return res.json({
         speech: speech,
