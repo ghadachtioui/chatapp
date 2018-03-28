@@ -56,7 +56,7 @@ var speech =
       { 
         speech= "Désolé, mais votre solde de congé est insuffisant !";
       }
-    else 
+    else if ( req.body.result.parameters.number <= n )
       {
         speech= "D'accord ça marche !";
       }
