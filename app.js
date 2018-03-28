@@ -52,11 +52,11 @@ var speech =
  {
     speech= "Ok, Dites moi vous voulez combien de jours exactement";
 
-    if (req.body.result.parameters.number > n ) 
+    if (req.body.result.action == 'conge.conge-custom' && req.body.result.parameters.number > n ) 
       { 
         speech= "Désolé, mais votre solde de congé est insuffisant !";
       }
-    else if ( req.body.result.parameters.number <= n )
+    else if ( req.body.result.action == 'conge.conge-custom' && req.body.result.parameters.number <= n )
       {
         speech= "D'accord ça marche !";
       }
