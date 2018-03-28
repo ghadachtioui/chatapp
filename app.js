@@ -59,7 +59,7 @@ var speech =
       }
     else if ( req.body.result.action == 'conge.conge-custom' && req.body.result.parameters.number <= n )
       {
-        speech= "D'accord ça marche !";
+        speech= "D'accord ça marche! Une notificaion sera envoyée à votre supérieur hiérarchique";
       }
  
 
