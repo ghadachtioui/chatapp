@@ -16,6 +16,7 @@ var uristring =
 // The http server will listen to an appropriate port, or default to
 // port 5000.
 var theport = process.env.PORT || 5000;
+var dialogflow = require("dialogflow");
 
 restService.use(
   bodyParser.urlencoded({
@@ -118,4 +119,5 @@ var found = ['DB Connection not yet established.  Try again later.  Check the co
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
 });
+
 
