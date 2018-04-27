@@ -1,4 +1,4 @@
-/*"use strict";
+"use strict";
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -113,11 +113,10 @@ var johndoe = new PUser ({
 johndoe.save(function (err) {if (err) console.log ('Error on save!')});
 */ 
 
-/*
+
 var found = ['DB Connection not yet established.  Try again later.  Check the console output for error messages if this persists.'];
 
 restService.listen(process.env.PORT || 8000, function() {
   console.log("Server up and listening");
 });
 
-*/
